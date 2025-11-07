@@ -1,4 +1,4 @@
-type PageType = 'home' | 'Política' | 'Economia' | 'Brasil' | 'Mundo' | 'Tecnologia' | 'Saúde' | 'Esportes' | 'Cultura' | 'COP 30' | 'demo';
+type PageType = 'home' | 'Política' | 'Economia' | 'Brasil' | 'Mundo' | 'Tecnologia' | 'Saúde' | 'Esportes' | 'Cultura' | 'COP 30';
 
 interface CategoryMenuProps {
   currentPage: PageType;
@@ -17,7 +17,6 @@ export default function CategoryMenu({ currentPage, onPageChange }: CategoryMenu
     { id: 'Esportes' as PageType, name: 'Esportes' },
     { id: 'Cultura' as PageType, name: 'Cultura' },
     { id: 'COP 30' as PageType, name: 'COP 30' },
-    { id: 'demo' as PageType, name: '🎨 Demo UI' }
   ];
 
   return (

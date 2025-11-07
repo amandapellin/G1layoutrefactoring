@@ -4,7 +4,7 @@ import { Bookmark, Share2, Clock } from "lucide-react";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import ShareDialog from "./ShareDialog";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 interface NewsCardProps {
   title: string;
@@ -29,7 +29,7 @@ export default function NewsCard({
 
   if (compact) {
     return (
-      <article className="flex gap-4 pb-4 border-b border-neutral-200 hover:bg-neutral-50 p-3 rounded-lg transition-colors group">
+      <article className="flex gap-4 pb-4 border-b border-neutral-300 hover:bg-neutral-50 p-3 rounded-lg transition-colors group">
         <div className="flex-1">
           <Badge variant="secondary" className="mb-2 text-xs">
             {category}
@@ -46,7 +46,7 @@ export default function NewsCard({
             <ShareDialog title={title} />
           </div>
         </div>
-        <div className="w-32 h-24 flex-shrink-0">
+        <div className="w-32 h-24 shrink-0">
           <img
             src={image}
             alt={title}
@@ -59,7 +59,7 @@ export default function NewsCard({
 
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-16/10 overflow-hidden">
         <img
           src={image}
           alt={title}

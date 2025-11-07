@@ -8,10 +8,9 @@ import PoliticaPage from './components/PoliticaPage';
 import EconomiaPage from './components/EconomiaPage';
 import TecnologiaPage from './components/TecnologiaPage';
 import CategoryPage from './components/CategoryPage';
-import DemoPage from './components/DemoPage';
 import { Toaster } from './components/ui/sonner';
 
-type PageType = 'home' | 'Política' | 'Economia' | 'Brasil' | 'Mundo' | 'Tecnologia' | 'Saúde' | 'Esportes' | 'Cultura' | 'COP 30' | 'demo';
+type PageType = 'home' | 'Política' | 'Economia' | 'Brasil' | 'Mundo' | 'Tecnologia' | 'Saúde' | 'Esportes' | 'Cultura' | 'COP 30';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -122,8 +121,6 @@ export default function App() {
       case 'Cultura':
       case 'COP 30':
         return <CategoryPage categoryName={currentPage} stories={categoryData[currentPage]} />;
-      case 'demo':
-        return <DemoPage />;
       default:
         return <HomePage />;
     }

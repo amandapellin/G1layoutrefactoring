@@ -69,6 +69,13 @@ export default function EconomiaPage() {
           <div className="lg:col-span-2">
             {/* Featured story */}
             <article className="mb-8">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-4">
+                <img
+                  src={stories[0].image}
+                  alt={stories[0].title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <span className="text-sm text-neutral-600 mb-2 block">{stories[0].category}</span>
               <h1 className="text-red-600 mb-3 font-bold">
                 {stories[0].title}
@@ -90,6 +97,7 @@ export default function EconomiaPage() {
                   image={story.image}
                   category={story.category}
                   timeAgo={story.timeAgo}
+                  compact
                 />
               ))}
             </div>
