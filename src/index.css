@@ -2603,13 +2603,21 @@ html {
   font-size: var(--font-size);
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
 }
 
 @property --tw-translate-x {

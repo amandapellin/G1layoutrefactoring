@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "./ui/dialog";
 import { Badge } from "./ui/badge";
 import { Play, Volume2, VolumeX, Maximize } from "lucide-react";
 import { Button } from "./ui/button";
@@ -58,6 +58,11 @@ export default function VideoPlayer({ title, thumbnail, duration, category }: Vi
       </DialogTrigger>
       
       <DialogContent className="max-w-4xl p-0">
+        <DialogTitle className="sr-only">{title}</DialogTitle>
+        <DialogDescription className="sr-only">
+          Player de vídeo: {title}. {category ? `Categoria: ${category}.` : ''} Duração: {duration}.
+        </DialogDescription>
+        
         {/* Video Player Modal */}
         <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden">
           <img
