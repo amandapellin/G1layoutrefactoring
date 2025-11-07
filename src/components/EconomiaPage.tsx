@@ -1,3 +1,7 @@
+import NewsCard from "./NewsCard";
+import NewsletterSignup from "./NewsletterSignup";
+import ShareDialog from "./ShareDialog";
+
 export default function EconomiaPage() {
   const marketIndicators = [
     { name: "R$", value: "5,544", change: "-0.38%", trending: "down" },
@@ -15,19 +19,22 @@ export default function EconomiaPage() {
       summary: "Quanto eu posso juntar e quanto vai para o futuro? Veja perguntas e respostas",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
       category: "Imposto de Renda",
+      timeAgo: "45 min atrás",
       featured: true
     },
     {
       title: "Concurso da Caixa terá salários de até R$ 14,9 mil; veja lista de vagas",
       summary: "Vagas para mais procuradas para 2026",
       image: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=600&h=400&fit=crop",
-      category: "Oportunidade"
+      category: "Oportunidade",
+      timeAgo: "1h atrás"
     },
     {
       title: "Brasil segue em 2º no ranking de maiores juros reais do mundo; lista",
       summary: "País mantém segunda posição entre economias com taxas mais elevadas",
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
-      category: "Selic"
+      category: "Selic",
+      timeAgo: "2h atrás"
     }
   ];
 
@@ -66,26 +73,24 @@ export default function EconomiaPage() {
               <h1 className="text-red-600 mb-3 font-bold">
                 {stories[0].title}
               </h1>
-              <p className="text-neutral-700 mb-4">{stories[0].summary}</p>
+              <p className="text-neutral-700 mb-3">{stories[0].summary}</p>
+              <div className="flex items-center gap-4">
+                <span className="text-sm text-neutral-500">{stories[0].timeAgo}</span>
+                <ShareDialog title={stories[0].title} />
+              </div>
             </article>
 
             {/* Secondary stories grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {stories.slice(1).map((story, index) => (
-                <article key={index} className="group cursor-pointer">
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-3">
-                    <img
-                      src={story.image}
-                      alt={story.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <span className="text-sm text-neutral-600 mb-2 block">{story.category}</span>
-                  <h3 className="text-red-600 mb-2 group-hover:text-red-700 transition-colors font-semibold">
-                    {story.title}
-                  </h3>
-                  <p className="text-neutral-600 text-sm">{story.summary}</p>
-                </article>
+                <NewsCard
+                  key={index}
+                  title={story.title}
+                  summary={story.summary}
+                  image={story.image}
+                  category={story.category}
+                  timeAgo={story.timeAgo}
+                />
               ))}
             </div>
           </div>
@@ -98,8 +103,8 @@ export default function EconomiaPage() {
               <div className="space-y-4">
                 {topStories.map((story, index) => (
                   <div key={index} className="flex gap-3 pb-4 border-b border-neutral-200 last:border-0">
-                    <span className="text-2xl text-red-600 font-semibold">{index + 1}</span>
-                    <p className="text-sm text-red-600 hover:text-red-700 cursor-pointer flex-1">
+                    <span className="text-red-600 flex-shrink-0">{index + 1}</span>
+                    <p className="text-sm text-red-600 hover:text-red-700 cursor-pointer">
                       {story}
                     </p>
                   </div>
@@ -107,29 +112,11 @@ export default function EconomiaPage() {
               </div>
             </section>
 
-            {/* Market widget */}
-            <section className="bg-white rounded-lg p-4 shadow-sm mb-8">
-              <h3 className="text-neutral-900 mb-3">Mercados</h3>
-              <div className="space-y-3">
-                <div>
-                  <div className="text-sm text-neutral-600 mb-1">Ibovespa</div>
-                  <div className="flex items-end gap-2">
-                    <span className="text-2xl text-neutral-900">153.957 pts</span>
-                    <span className="text-sm text-green-600">↑ +0.63%</span>
-                  </div>
-                </div>
-                <div>
-                  <div className="text-sm text-neutral-600 mb-1">Dólar</div>
-                  <div className="flex items-end gap-2">
-                    <span className="text-2xl text-neutral-900">R$ 5,544</span>
-                    <span className="text-sm text-red-600">↓ -0.38%</span>
-                  </div>
-                </div>
-              </div>
-            </section>
+            {/* Newsletter Signup */}
+            <NewsletterSignup />
 
             {/* Ad placeholder */}
-            <div className="mb-8">
+            <div className="mt-8">
               <div className="text-xs text-neutral-500 mb-2 text-center">PUBLICIDADE</div>
               <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-lg p-8 flex items-center justify-center">
                 <div className="text-white">
