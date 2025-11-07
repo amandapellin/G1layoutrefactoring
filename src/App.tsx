@@ -1,6 +1,6 @@
 import { Search, Menu, User, ChevronRight, ChevronLeft, X } from 'lucide-react';
 import { useState } from 'react';
-import logoG1 from 'figma:asset/49d59e9d13f4a7bd11c57b2b343f91f38dca7d91.png';
+import logoG1 from './assets/logo-g1.png';
 import PoliticaPage from './components/PoliticaPage';
 import EconomiaPage from './components/EconomiaPage';
 import TecnologiaPage from './components/TecnologiaPage';
