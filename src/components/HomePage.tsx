@@ -1,3 +1,4 @@
+import NewsCard from "./NewsCard";
 import VideoPlayer from "./VideoPlayer";
 import NewsletterSignup from "./NewsletterSignup";
 import ShareDialog from "./ShareDialog";
@@ -83,7 +84,7 @@ export default function HomePage() {
         <div className="lg:col-span-2">
           {/* Manchete principal sem anúncios competindo */}
           <article className="mb-12">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-4">
+            <div className="relative aspect-[16/7] overflow-hidden rounded-lg mb-4">
               <img
                 src={mainStory.image}
                 alt={mainStory.title}

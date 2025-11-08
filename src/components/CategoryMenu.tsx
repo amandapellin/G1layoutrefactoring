@@ -1,22 +1,35 @@
-type PageType = 'home' | 'Política' | 'Economia' | 'Brasil' | 'Mundo' | 'Tecnologia' | 'Saúde' | 'Esportes' | 'Cultura' | 'COP 30';
+type PageType =
+  | "home"
+  | "Política"
+  | "Economia"
+  | "Brasil"
+  | "Mundo"
+  | "Tecnologia"
+  | "Saúde"
+  | "Esportes"
+  | "Cultura"
+  | "COP 30";
 
 interface CategoryMenuProps {
   currentPage: PageType;
   onPageChange: (page: PageType) => void;
 }
 
-export default function CategoryMenu({ currentPage, onPageChange }: CategoryMenuProps) {
+export default function CategoryMenu({
+  currentPage,
+  onPageChange,
+}: CategoryMenuProps) {
   const categories = [
-    { id: 'home' as PageType, name: 'Home' },
-    { id: 'Política' as PageType, name: 'Política' },
-    { id: 'Economia' as PageType, name: 'Economia' },
-    { id: 'Brasil' as PageType, name: 'Brasil' },
-    { id: 'Mundo' as PageType, name: 'Mundo' },
-    { id: 'Tecnologia' as PageType, name: 'Tecnologia' },
-    { id: 'Saúde' as PageType, name: 'Saúde' },
-    { id: 'Esportes' as PageType, name: 'Esportes' },
-    { id: 'Cultura' as PageType, name: 'Cultura' },
-    { id: 'COP 30' as PageType, name: 'COP 30' },
+    { id: "home" as PageType, name: "Home" },
+    { id: "Política" as PageType, name: "Política" },
+    { id: "Economia" as PageType, name: "Economia" },
+    { id: "Brasil" as PageType, name: "Brasil" },
+    { id: "Mundo" as PageType, name: "Mundo" },
+    { id: "Tecnologia" as PageType, name: "Tecnologia" },
+    { id: "Saúde" as PageType, name: "Saúde" },
+    { id: "Esportes" as PageType, name: "Esportes" },
+    { id: "Cultura" as PageType, name: "Cultura" },
+    { id: "COP 30" as PageType, name: "COP 30" },
   ];
 
   return (
@@ -29,8 +42,8 @@ export default function CategoryMenu({ currentPage, onPageChange }: CategoryMenu
               onClick={() => onPageChange(category.id)}
               className={`whitespace-nowrap transition-colors font-semibold relative ${
                 currentPage === category.id
-                  ? 'text-red-600'
-                  : 'text-neutral-700 hover:text-red-600'
+                  ? "text-red-600"
+                  : "text-neutral-700 hover:text-red-600"
               }`}
             >
               {category.name}

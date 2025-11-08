@@ -8,6 +8,7 @@ import PoliticaPage from './components/PoliticaPage';
 import EconomiaPage from './components/EconomiaPage';
 import TecnologiaPage from './components/TecnologiaPage';
 import CategoryPage from './components/CategoryPage';
+import DemoPage from './components/DemoPage';
 import { Toaster } from './components/ui/sonner';
 
 type PageType = 'home' | 'Política' | 'Economia' | 'Brasil' | 'Mundo' | 'Tecnologia' | 'Saúde' | 'Esportes' | 'Cultura' | 'COP 30';
