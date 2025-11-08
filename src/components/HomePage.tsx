@@ -1,4 +1,3 @@
-import NewsCard from "./NewsCard";
 import VideoPlayer from "./VideoPlayer";
 import NewsletterSignup from "./NewsletterSignup";
 import ShareDialog from "./ShareDialog";
